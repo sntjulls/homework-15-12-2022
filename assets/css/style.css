@@ -1,63 +1,69 @@
 :root {
-    font-size: 24px;
-  }
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0;
-  }
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-  img{
-    width: 100%;
-  }
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  main {
-    margin: 5vmin;
-  }
-  .user-card{
-    width: 70%;
-    margin: auto;
-    text-align: center;
-  }
-  .user-card__img{
-    height: 300px;
-    clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
-    object-fit: cover;
-    object-position: 0 -40px;
-  }
-  .user-card__name{
-    position: relative;
-
-  }
+  font-size: 24px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  width: 100%;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+main {
+  margin: 5vmin;
+}
+.user-card {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+.user-card__img {
+  height: 300px;
+  clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    25% 100%,
+    25% 25%,
+    75% 25%,
+    75% 75%,
+    25% 75%,
+    25% 100%,
+    100% 100%,
+    100% 0%
+  );
+  object-fit: cover;
+  object-position: 0 -40px;
+}
+.user-card__name {
+  position: relative;
+}
 
 .user-card__name::before,
-.user-card__name::after{
+.user-card__name::after {
   content: linear-gradient(#e66465, #0d1ed7);
   display: block;
   width: 1%;
   height: 30px;
-  position: static;
-  top: 10%;
-
+  transition: width 1%;
 }
 
-.slider:hover::after,
-.slider:hover::before{
-transition: 10s;
-}
-
-.slider:hover>.user-card__name {
+.user-card:hover .user-card__name:hover::after,
+.user-card:hover .user-card__name:hover::before {
   width: 100%;
-  height: 30px;
-  /* content: linear-gradient(#e66465, #0d1ed7); */
-  transition: 10s;
-  background-color: linear-gradient(#e66465, #0d1ed7);
+  transition: width 4s;
 }
 
+.user-card__name::before {
+  position: absolute;
+  right: 0;
+  top: -50%;
+}
